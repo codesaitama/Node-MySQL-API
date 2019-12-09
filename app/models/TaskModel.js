@@ -22,6 +22,7 @@ Task.createTask = (newTask, result) => {
         }
     });
 };
+
 Task.getTaskById = (taskId, result) => {
     sql.query("Select task from tasks where id = ? ", taskId, function(err, res) {
         if (err) {
@@ -33,6 +34,7 @@ Task.getTaskById = (taskId, result) => {
         }
     });
 };
+
 Task.getAllTask = (result) => {
     sql.query("Select * from tasks", function(err, res) {
         if (err) {
@@ -45,6 +47,7 @@ Task.getAllTask = (result) => {
         }
     });
 };
+
 Task.updateById = (id, task, result) => {
     sql.query("UPDATE tasks SET task = ? WHERE id = ?", [task.task, id], function(err, res) {
         if (err) {
@@ -55,6 +58,7 @@ Task.updateById = (id, task, result) => {
         }
     });
 };
+
 Task.remove = (id, result) => {
     sql.query("DELETE FROM tasks WHERE id = ?", [id], function(err, res) {
         if (err) {
